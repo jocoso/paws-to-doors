@@ -1,0 +1,20 @@
+{
+  "name": "paws-to-doors",
+  "version": "1.0.0",
+  "description": "A adoption website",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jocoso/paws-to-doors.git#master"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jocoso/paws-to-doors/issues"
+  },
+  "homepage": "https://github.com/jocoso/paws-to-doors/tree/master#readme"
+}
