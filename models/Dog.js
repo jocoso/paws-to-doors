@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+Module.exports = (sequelize, DataTypes) => {
     const Dog = sequelize.define('Dog', {
       name: DataTypes.STRING,
       imageUrl: DataTypes.STRING,

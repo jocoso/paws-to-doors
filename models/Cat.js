@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+Module.exports = (sequelize, DataTypes) => {
     const Cat = sequelize.define('Cat', {
       name: DataTypes.STRING,
       imageUrl: DataTypes.STRING,
