@@ -51,3 +51,4 @@ const dogData = [
 const seedDogs = () => Dog.bulkCreate(dogData);
 
 module.exports = seedDogs;
+
