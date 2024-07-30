@@ -1,20 +1,28 @@
 const User = require('./User');
-const Cat = require('./Cat');
 const Dog = require('./Dog');
-
-//TODO: Instead of cats and dogs... Pet?
-User.hasMany(Cat, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
+const Cat = require('./Cat');
 
 User.hasMany(Dog, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+User.hasMany(Cat, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
-module.exports = { User, Project };
+Dog.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+Cat.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+module.exports = {
+    User,
+    Dog, 
+    Cat,
+};
+
