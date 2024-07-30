@@ -1,77 +1,78 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../../config/connection');
+const router = require('express').Router();
+const { Pet } = require('../../models');
 
-class Pet extends Model {}
-
-Pet.init(
-    { 
-        id: {type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-
-        },
-
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        type: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isIn: [['dog', 'cat']]
-            }
-        },
-        breed: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-        },
-        health_status: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
-        location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
-        },
-    },
-
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        modelName: 'pet',
-    }
-);
-
-module.exports = Pet;const router = require('express').Router();
-
+// Get all pets
 router.get('/', async (req, res) => {
+  try {
+    const petData = await Pet.findAll();
+    res.status(200).json(petData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-    res.render('index')
+// Get pet by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const petData = await Pet.findByPk(req.params.id);
+    if (!petData) {
+      res.status(404).json({ message: 'No pet found with this id!' });
+      return;
+    }
+    res.status(200).json(petData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-})
+// Create new pet
+router.post('/', async (req, res) => {
+  try {
+    const newPet = await Pet.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json(newPet);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
-router.get('/test', async (req, res) => {
+// Update pet
+router.put('/:id', async (req, res) => {
+  try {
+    const petData = await Pet.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!petData[0]) {
+      res.status(404).json({ message: 'No pet found with this id!' });
+      return;
+    }
+    res.status(200).json(petData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-    res.render('test')
-
-})
+// Delete pet
+router.delete('/:id', async (req, res) => {
+  try {
+    const petData = await Pet.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if (!petData) {
+      res.status(404).json({ message: 'No pet found with this id!' });
+      return;
+    }
+    res.status(200).json(petData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

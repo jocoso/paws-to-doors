@@ -1,12 +1,13 @@
 const User = require('./User');
-const Dog = require('./Dog');
-const Cat = require('./Cat');
+const Pet = require('./Pet');
 
-User.hasMany(Dog, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+// Define associations here
+User.hasMany(Pet, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
+<<<<<<< HEAD
 User.hasMany(Cat, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
@@ -21,12 +22,18 @@ Dog.belongsTo(User, {
 
 Cat.belongsTo(User, {
     foreignKey: 'user_id',
+=======
+Pet.belongsTo(User, {
+  foreignKey: 'user_id',
+>>>>>>> c51f815887a34dc45810d7f0b746587dd7c1d2d2
 });
 
 module.exports = {
-    User,
-    Dog, 
-    Cat,
+  User,
+  Pet,
 };
+<<<<<<< HEAD
 
 >>>>>>> e67214e68f505b6199e6cb30e2fe0bf95a31a3aa
+=======
+>>>>>>> c51f815887a34dc45810d7f0b746587dd7c1d2d2
