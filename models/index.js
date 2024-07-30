@@ -12,6 +12,9 @@ User.hasMany(Cat, {
     onDelete: 'CASCADE',
 });
 
+<<<<<<< HEAD
+module.exports = { User, };
+=======
 Dog.belongsTo(User, {
     foreignKey: 'user_id',
 });
@@ -26,3 +29,4 @@ module.exports = {
     Cat,
 };
 
+>>>>>>> e67214e68f505b6199e6cb30e2fe0bf95a31a3aa
