@@ -16,11 +16,7 @@ const hbs = exphbs.create({ helpers });
 
 // Configure sessions
 const sess = {
-<<<<<<< HEAD
   secret: process.env.SESSION_SECRET,
-=======
-  secret: 'Super secret secret',
->>>>>>> c51f815887a34dc45810d7f0b746587dd7c1d2d2
   cookie: {},
   resave: false,
   saveUninitialized: true,
