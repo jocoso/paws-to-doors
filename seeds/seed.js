@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
-const seedUsers = require('./seedUsers');
-const seedPets = require('./seedPets');
+const seedUsers = require('./userSeeds');
+const seedPets = require('./petseeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
