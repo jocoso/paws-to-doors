@@ -1,36 +1,34 @@
-const squelize = require('../config/connection');
+
 const User = require('../models/User');
 
 const userData = [
     {
-        username: ,
-        email: ,
-        password: ,
+        username: 'john_doe',
+        email: 'john_doe@example.com',
+        password: 'password123',
     },
     {
-        username: ,
-        email: ,
-        password: ,
+        username: 'jane_smith',
+        email: 'jane_smith@example.com',
+        password: 'password456',
     },
     {
-        username: ,
-        email: ,
-        password: ,
+        username: 'mike_jones',
+        email: 'mike_jones@example.com',
+        password: 'password789',
     },
     {
-        username: ,
-        email: ,
-        password: ,
+        username: 'sara_brown',
+        email: 'sara_brown@example.com',
+        password: 'password101',
     },
     {
-        username: ,
-        email: ,
-        password: ,
+        username: 'alex_lee',
+        email: 'alex_lee@example.com',
+        password: 'password202',
     },
-
 ];
 
-const seedUsers = () => User.bulkCreate(userData, { individualHooks: true});
+const seedUsers = () => User.bulkCreate(userData, { individualHooks: true });
 
 module.exports = seedUsers;
-
