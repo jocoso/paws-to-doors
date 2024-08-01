@@ -11,7 +11,7 @@ const fetchPetInfo = async (url, apiKey) => {
     }
 };
 
-// Dog breeds
+//Display Dog breeds
 const displayDogBreeds = async () => {
     const dogBreeds = await fetchPetInfo('https://api.thedogapi.com/v1/breeds', process.env.THE_DOG_API_KEY);
     if(dogBreeds) {
@@ -30,7 +30,7 @@ const displayDogBreeds = async () => {
     }
 };
 
-// Cat breeds
+//Display Cat breeds
 const displayCatBreeds = async () => {
     const catBreeds = await fetchPetInfo('https://api.thecatapi.com/v1/breeds', process.env.THE_CAT_API_KEY);
     if (catBreeds) {
@@ -47,4 +47,16 @@ const displayCatBreeds = async () => {
             breedList.appendChild(breedCard);
         });
     }
-}
+};
+
+// Call functions
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.breed-list')) {
+        const breedType = document.querySelector('.breed-list').dataset.type;
+        if (breedType === 'dog') {
+            displayDogBreeds();
+        } else if (breedType === 'cat') {
+            displayCatBreeds();
+        }
+    }
+});
