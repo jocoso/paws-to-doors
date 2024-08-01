@@ -9,17 +9,16 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
         },
       ],
     });
 
-    // Serialize data so the template can read it
-    const pet = petData.map((data) => pet.get({ plain: true }));
+    // // Serialize data so the template can read it
+    const pet = petData.map((data) => data.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      pet, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
