@@ -7,9 +7,6 @@ User.hasMany(Pet, {
   onDelete: 'CASCADE',
 });
 
-Pet.belongsTo(User, {
-    foreignKey: 'user_id',
-});
 
 module.exports = {
   User,
