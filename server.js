@@ -7,15 +7,12 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-<<<<<<< HEAD
 
 
 // Import Models
 const models = require('./models');
 
 
-=======
->>>>>>> cfe0e4d9f3976288e89884219d8a0d0026eceb8b
 const app = express();
 const PORT = process.env.PORT || 3001;
 
