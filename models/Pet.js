@@ -38,6 +38,7 @@ Pet.init(
     location: {
       type: DataTypes.STRING,
       allowNull: false,
+      
     },
     user_id: {
       type: DataTypes.INTEGER,
