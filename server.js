@@ -2,12 +2,17 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const controllers = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const routes = require('./routes');
+
+
+// Import Models
+const models = require('./models');
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -43,14 +48,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use routes
-app.use(routes);
+app.use(controllers);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
-});
+// Sync database and start the server
+const syncDB = async () => {
+  try {
+    await sequelize.sync({ force: true }); // Set force to true for initial sync, use alter for updates
+    app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+  } catch (err) {
+    console.error('Error connecting to the database:', err);
+    process.exit(1);
+  }
+};
 
-
-
-
-
-
+syncDB();
