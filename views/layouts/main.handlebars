@@ -13,10 +13,24 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        {{!-- <span role="img" aria-label="money"></span>
+        <a href="/">Fund My Project!</a> --}}
+        <div class="logo">
+          <img src="{{logoSrc}}" alt="Paws to Doors">
+          <span>{{logoText}}</span>
+        </div>
       </h1>
       <nav>
+        <ul class="nav-tabs">
+          {{#each tabs}}
+            <li><a href="{{this.href}}">{{this.name}}</a></li>
+          {{/each}}
+        </ul>
+        {{!-- SEARCH BAR --}}
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit">Search</button>
+        </div>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -30,6 +44,7 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+    
     <footer>
       
     </footer>
