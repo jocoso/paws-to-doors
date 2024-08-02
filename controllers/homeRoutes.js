@@ -1,6 +1,13 @@
 const router = require('express').Router();
 const { Pet, User } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
+
+require('dotenv').config();
+
+const OPENCAGE_API_KEY = process.env.OPENCAGE_API_KEY;
+
+
 
 router.get('/', async (req, res) => {
   try {
@@ -26,21 +33,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/Pet/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const petData = await Pet.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          // attributes: ['name'],
         },
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const Pet = petData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('pet', {
+      ...pet,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -77,5 +84,42 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
+router.get('/dog-breeds', async (req, res) => {
+  try {
+    const response = await axios.get('https://api.thedogapi.com/v1/breeds');
+    const dogBreeds = response.data;
+    res.render('dog-breeds', { dogBreeds });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/cat-breeds', async (req, res) => {
+  try {
+    const response = await axios.get('https://api.thecatapi.com/v1/breeds');
+    const catBreeds = response.data;
+    res.render('cat-breeds', { catBreeds });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/geolocation', async (req, res) => {
+  const { address } = req.query;
+  if (!address) {
+    return res.status(400).json({ error: 'Address query parameter is required' });
+  }
+
+  try {
+    const response = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=YOUR_OPENCAGE_API_KEY`);
+    const geolocationData = response.data;
+    res.json(geolocationData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;
