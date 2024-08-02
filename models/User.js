@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class User extends Model {}
 
+
 User.init(
     {
         id: {
@@ -11,7 +12,7 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -33,5 +34,6 @@ User.init(
         modelName: "user",
     }
 );
+
 
 module.exports = User;
