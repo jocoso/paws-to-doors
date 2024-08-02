@@ -12,13 +12,29 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        await showAlert("Login successful");
         document.location.replace('/');
+        
       } else {
-        alert('Failed to log in.');
+        await showAlert("Login failed");
       }
     }
   };
+
+  function showAlert(message) {
+    return new Promise((resolve) => {
+        const alertBox = document.getElementById('customAlert');
+        document.getElementById('alertMessage').textContent = message;
+        alertBox.style.display = 'block';
+
+        window.closeAlert = () => {
+            alertBox.style.display = 'none';
+            resolve();
+        };
+    });
+}
   
+
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
