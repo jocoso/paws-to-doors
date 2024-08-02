@@ -3,7 +3,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./connection');
 
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'secret',
     cookie: {},
     resave: false,
     saveUninitialized: true,
