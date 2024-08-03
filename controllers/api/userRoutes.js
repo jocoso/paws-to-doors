@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const hashPassword = async (password) => {
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password,salt);
+    const hashedPassword = await bcrypt.hash(password, salt);
     return hashedPassword;
 };
 
@@ -29,12 +29,10 @@ router.post("/", async (req, res) => {
 // Login user
 router.post("/login", async (req, res) => {
     try {
-      
         const userData = await User.findOne({
             where: { email: req.body.email },
         });
 
-       
         if (!userData) {
             res.status(400).json({
                 message: "Incorrect email, please try again",
@@ -42,7 +40,12 @@ router.post("/login", async (req, res) => {
             return;
         }
 
-        const validPassword = await bcrypt.compare(req.body.password, userData.password);
+
+        const validPassword = await bcrypt.compare(
+            req.body.password,
+            userData.password
+        );
+
         if (!validPassword) {
             res.status(400).json({
                 message: "Incorrect password, please try again",

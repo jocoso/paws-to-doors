@@ -60,6 +60,33 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Route to adopt a pet
+router.post('/adopt/:id', async (req, res) => {
+  try {
+    if (!req.session.logged_in) {
+      res.status(401).json({ message: 'You need to be logged in to adopt a pet' });
+      return;
+    }
+
+    const petData = await Pet.findByPk(req.params.id);
+
+    if (!petData) {
+      res.status(404).json({ message: 'No pet found with this id!' });
+      return;
+    }
+
+    await Pet.update({ user_id: req.session.user_id }, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    res.status(200).json({ message: 'Pet adopted successfully!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Delete pet
 router.delete('/:id', async (req, res) => {
   try {
