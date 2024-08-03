@@ -26,18 +26,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use the session middleware
-const sessionMiddleware = configureSession();
-console.log('Session middleware:', sessionMiddleware);
-app.use(sessionMiddleware);
+app.use(configureSession());
 
 // Use routes
-console.log('Using controllers:', controllers);
 app.use(controllers);
 
 // Sync database and start the server
 const syncDB = async () => {
   try {
-    await sequelize.sync({ force: false }); // Set force to true for initial sync, use alter for updates
+    await sequelize.sync({ force: false });
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
   } catch (err) {
     console.error('Error connecting to the database:', err);
