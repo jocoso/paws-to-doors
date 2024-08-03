@@ -9,13 +9,18 @@
             today.</p>
     </div>
 
-    {{!-- ALERT BOARD --}}
-    <div id="customAlert" style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div style="background: white; width: 300px; padding: 20px; margin: 25% auto; text-align: center;">
+    {{! ALERT BOARD }}
+    <div
+        id="customAlert"
+        style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);"
+    >
+        <div
+            style="background: white; width: 300px; padding: 20px; margin: 25% auto; text-align: center;"
+        >
             <p id="alertMessage">This is an alert!</p>
             <button onclick="closeAlert()">OK</button>
         </div>
-</div>
+    </div>
     {{! Form }}
     <form class="mx-auto mt-16 max-w-xl sm:mt-20 login-form">
         <div class="grid gap-x-8 gap-y-6">
