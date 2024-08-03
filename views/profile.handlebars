@@ -1,0 +1,39 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {{> header}}
+  <div class="container">
+    <h1>Welcome, {{name}}</h1>
+    <p>Email: {{email}}</p>
+
+    <h2>Your Adopted Pets</h2>
+    <div id="adopted-pets-container">
+      {{#if pets.length}}
+        {{#each pets}}
+          <div class="pet-card" data-type="{{type}}" data-id="{{id}}">
+            <h2>{{name}}</h2>
+            <p>Type: {{type}}</p>
+            <p>Breed: {{breed}}</p>
+            <p>Age: {{age}}</p>
+            <p>Health Status: {{health_status}}</p>
+            <p>Description: {{description}}</p>
+            <p>Location: {{location}}</p>
+            <img src="{{image_url}}" alt="Picture of {{name}}">
+            <a href="/pet/{{id}}">View Details</a>
+          </div>
+        {{/each}}
+      {{else}}
+        <p>You have not adopted any pets yet.</p>
+      {{/if}}
+    </div>
+  </div>
+</body>
+</html> --}}
+
+

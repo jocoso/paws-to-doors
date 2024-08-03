@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Adopt a Pet</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   {{> header}}
   <div class="container">
-    <h1>Welcome to the Pet Adoption Agency</h1>
-    <div>
+    <h1>Adopt a Pet</h1>
+    <button id="show-dogs">Show Dogs</button>
+    <button id="show-cats">Show Cats</button>
+    <div id="pets-container">
       {{#each pets}}
-        <div class="pet-card" data-type="{{type}}">
+        <div class="pet-card" data-type="{{type}}" data-id="{{id}}">
           <h2>{{name}}</h2>
           <p>Type: {{type}}</p>
           <p>Breed: {{breed}}</p>
@@ -22,12 +24,12 @@
           <p>Location: {{location}}</p>
           <img src="{{image_url}}" alt="Picture of {{name}}">
           <a href="/pet/{{id}}">View Details</a>
+          <button class="adopt-button" data-id="{{id}}" data-logged_in="{{../logged_in}}">Adopt</button>
         </div>
       {{/each}}
     </div>
   </div>
-  <script src="/js/filterPets.js"></script>
+  <script src="/js/adopt.js"></script>
 </body>
 </html>
-
 

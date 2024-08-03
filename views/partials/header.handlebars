@@ -1,12 +1,17 @@
-{{!-- views/partials/header.handlebars --}}
 <header>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/signin">Sign In</a></li>
       <li><a href="/aboutUs">About Us</a></li>
       <li><a href="/donation">Donation</a></li>
+      <li><a href="/adopt">Adopt</a></li>
+      {{#if logged_in}}
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      {{else}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      {{/if}}
     </ul>
   </nav>
 </header>
