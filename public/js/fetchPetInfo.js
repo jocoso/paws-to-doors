@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const fetchPetInfo = async (url, apiKey) => {
     try {
         const response = await fetch(url, {
