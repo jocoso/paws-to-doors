@@ -37,4 +37,26 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/signin', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('signin');
+});
+
+
+router.get('/aboutUs', (req, res) => {
+  res.render('aboutUs', {
+    logged_in: req.session.logged_in
+  });
+});
+
+router.get('/donation', (req, res) => {
+  res.render('donation', {
+    logged_in: req.session.logged_in
+  });
+});
+
 module.exports = router;

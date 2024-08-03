@@ -1,0 +1,12 @@
+<div class="pet-card" data-type="{{type}}">
+  <h3>{{name}}</h3>
+  <p>Type: {{type}}</p>
+  <p>Breed: {{breed}}</p>
+  <p>Age: {{age}}</p>
+  <p>Health Status: {{health_status}}</p>
+  <p>Description: {{description}}</p>
+  <p>Location: {{location}}</p>
+  <img src="{{image_url}}" alt="Image of {{name}}">
+  <a href="/pet/{{id}}">View Details</a>
+  <button class="adopt-btn" data-id="{{id}}" data-loggedin="{{../logged_in}}">Adopt</button>
+</div>
