@@ -14,23 +14,23 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   }
   
   /* Header styles */
-  header {
+  nav {
     background-color: #007bff;
     color: #fff;
     padding: 10px 0;
   }
   
-  header nav ul {
+   nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
   }
   
-  header nav ul li {
+   nav ul li {
     margin: 0 15px;
   }
   
-  header nav ul li a {
+  nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
