@@ -75,6 +75,7 @@ router.get('/pet/:id', async (req, res) => {
     }
 
     const pet = petData.get({ plain: true });
+    console.log(pet); 
 
     res.render('petDetails', {
       pet,
