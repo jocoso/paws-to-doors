@@ -1,33 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  {{> header}}
-  <div class="container">
-    <h1>Welcome to the Pet Adoption Agency</h1>
-    <div>
-      {{#each pets}}
-        <div class="pet-card" data-type="{{type}}">
-          <h2>{{name}}</h2>
-          <p>Type: {{type}}</p>
-          <p>Breed: {{breed}}</p>
-          <p>Age: {{age}}</p>
-          <p>Health Status: {{health_status}}</p>
-          <p>Description: {{description}}</p>
-          <p>Location: {{location}}</p>
-          <img src="{{image_url}}" alt="Picture of {{name}}">
-          <a href="/pet/{{id}}">View Details</a>
+{{!-- <section class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+  <div class="group cursor-pointer relative">
+    <img src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg" alt="dog"
+    class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105">
+  </div>
+  <div class="group cursor-pointer relative">
+    <img src="https://people.com/thmb/n6EdTmvAL3TkkAqrT47caD6tUu8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(723x121:725x123)/wisp-the-cat-from-tiktok-092823-1-74797b02afe7475295e1478b2cdf2883.jpg" alt="cat"
+    {{!-- class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"> --}}
+  </div> --}}
+{{!-- </section> --}}
+<section>
+   <div class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+    <div class="w-1/2 shadow-xl rounded-2xl p-10 border">
+      <div class="flex justify-around gap-11 items-center">
+        <div>
+          <img src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg" alt="dog">
         </div>
-      {{/each}}
+        <div>
+          <h1 class=" font-extrabold text-3xl">doggy 1</h1>
+          <p class=" font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nam
+            asperiores harum? Sunt totam ut aliquam facere, autem quo deleniti ipsa beatae perspiciatis debitis optio
+            repudiandae voluptatum, molestias eos iusto?</p>
+        </div>
+      </div>
     </div>
   </div>
-  <script src="/js/filterPets.js"></script>
-</body>
-</html>
-
-
+     <div class="flex justify-center items-center h-screen">
+    <div class="w-1/2 shadow-xl rounded-2xl p-10 border">
+      <div class="flex justify-around gap-11 items-center">
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg" alt="dog">
+        </div>
+        <div>
+          <h1 class=" font-extrabold text-3xl">kitty 1</h1>
+          <p class=" font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nam
+            asperiores harum? Sunt totam ut aliquam facere, autem quo deleniti ipsa beatae perspiciatis debitis optio
+            repudiandae voluptatum, molestias eos iusto?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
