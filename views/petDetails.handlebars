@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{name}}</title>
+  <title>{{pet.name}}</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   {{> header}}
   <div class="container">
-    <h1>{{name}}</h1>
-    <p>Type: {{type}}</p>
-    <p>Breed: {{breed}}</p>
-    <p>Age: {{age}}</p>
-    <p>Health Status: {{health_status}}</p>
-    <p>Description: {{description}}</p>
-    <p>Location: {{location}}</p>
-    <img src="{{image_url}}" alt="Picture of {{name}}">
+    <h1>{{pet.name}}</h1>
+    <div class="pet-details">
+      <img src="{{pet.image_url}}" alt="Picture of {{pet.name}}">
+      <div class="details">
+        <p><strong>Type:</strong> {{pet.type}}</p>
+        <p><strong>Breed:</strong> {{pet.breed}}</p>
+        <p><strong>Age:</strong> {{pet.age}}</p>
+        <p><strong>Health Status:</strong> {{pet.health_status}}</p>
+        <p><strong>Description:</strong> {{pet.description}}</p>
+        <p><strong>Location:</strong> {{pet.location}}</p>
+      </div>
+    </div>
     {{#if logged_in}}
       <button id="adopt-pet">Adopt</button>
     {{else}}
       <a href="/login">Login to Adopt</a>
     {{/if}}
   </div>
-  <div id="map"></div>
   <script src="/js/petDetails.js"></script>
 </body>
 </html>
+
+
