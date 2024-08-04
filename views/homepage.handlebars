@@ -1,42 +1,108 @@
-{{!-- <section class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-  <div class="group cursor-pointer relative">
-    <img src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg" alt="dog"
-    class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105">
-  </div>
-  <div class="group cursor-pointer relative">
-    <img src="https://people.com/thmb/n6EdTmvAL3TkkAqrT47caD6tUu8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(723x121:725x123)/wisp-the-cat-from-tiktok-092823-1-74797b02afe7475295e1478b2cdf2883.jpg" alt="cat"
-    {{!-- class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"> --}}
-  </div> --}}
-{{!-- </section> --}}
-<section>
-   <div class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-    <div class="w-1/2 shadow-xl rounded-2xl p-10 border">
-      <div class="flex justify-around gap-11 items-center">
-        <div>
-          <img src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg" alt="dog">
+<section class="grid h-screen place-items-center">
+    {{! EXAMPLE OF A CARD }}
+    <div
+        class="row lg:max-w-full lg:flex w-1/2 shadow-xl rounded-2xl p-10 border"
+    >
+
+        {{! PICTURE DIV }}
+        <div
+            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            style="background-image: url('https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg')"
+            title="cute dog"
+        ></div>
+
+        {{! CARD CONTENTS DIV }}
+        <div class="p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-8">
+                <p class="text-sm text-gray-600 flex items-center">
+                    Vaccinated (Documents Available)
+                </p>
+                <div
+                    class="text-gray-900 font-bold text-xl mb-2"
+                >Marshmellow</div>
+                <p class="text-gray-700 text-base">A nice energetic doberman
+                    puppy. She is only 3 months old and she loves eating and
+                    cuddles.</p>
+            </div>
+
+            {{! SIGNATURE }}
+            <div class="flex items-center">
+                <div class="text-sm">
+                    <p class="text-gray-900 leading-none">Posted By: Tatiana</p>
+                    <p class="text-gray-600">Aug 18</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h1 class=" font-extrabold text-3xl">doggy 1</h1>
-          <p class=" font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nam
-            asperiores harum? Sunt totam ut aliquam facere, autem quo deleniti ipsa beatae perspiciatis debitis optio
-            repudiandae voluptatum, molestias eos iusto?</p>
-        </div>
-      </div>
     </div>
-  </div>
-     <div class="flex justify-center items-center h-screen">
-    <div class="w-1/2 shadow-xl rounded-2xl p-10 border">
-      <div class="flex justify-around gap-11 items-center">
-        <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg" alt="dog">
+
+    {{! EXAMPLE OF A CARD }}
+    <div
+        class="row lg:max-w-full lg:flex w-1/2 shadow-xl rounded-2xl p-10 border"
+    >
+
+        {{! PICTURE DIV }}
+        <div
+            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg')"
+            title="cute dog"
+        ></div>
+
+        {{! CARD CONTENTS DIV }}
+        <div class="p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-8">
+                <p class="text-sm text-gray-600 flex items-center">
+                    Vaccinated (Documents Available)
+                </p>
+                <div class="text-gray-900 font-bold text-xl mb-2">King</div>
+                <p class="text-gray-700 text-base">A cute little orange buddy in
+                    need for a good family.</p>
+            </div>
+
+            {{! SIGNATURE }}
+            <div class="flex items-center">
+                <div class="text-sm">
+                    <p class="text-gray-900 leading-none">Posted By: Joshua</p>
+                    <p class="text-gray-600">Aug 18</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <h1 class=" font-extrabold text-3xl">kitty 1</h1>
-          <p class=" font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nam
-            asperiores harum? Sunt totam ut aliquam facere, autem quo deleniti ipsa beatae perspiciatis debitis optio
-            repudiandae voluptatum, molestias eos iusto?</p>
-        </div>
-      </div>
     </div>
-  </div>
+
+    {{! <div class="flex justify-around gap-11 items-center">
+        <div>
+            <img
+                src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg"
+                alt="dog"
+            />
+        </div> }}
+    {{! <div>
+            <h1 class="font-extrabold text-3xl">doggy 1</h1>
+            <p class="font-semibold text-sm">Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Officia nam asperiores harum? Sunt
+                totam ut aliquam facere, autem quo deleniti ipsa beatae
+                perspiciatis debitis optio repudiandae voluptatum, molestias eos
+                iusto?</p>
+        </div>
+    </div>
+
+    <div class="flex justify-center items-center h-screen">
+        <div class="w-1/2 shadow-xl rounded-2xl p-10 border">
+            <div class="flex justify-around gap-11 items-center">
+                <div>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
+                        alt="dog"
+                    />
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-3xl">kitty 1</h1>
+                    <p class="font-semibold text-sm">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Officia nam asperiores
+                        harum? Sunt totam ut aliquam facere, autem quo deleniti
+                        ipsa beatae perspiciatis debitis optio repudiandae
+                        voluptatum, molestias eos iusto?</p>
+                </div>
+            </div>
+        </div>
+    </div> }}
 </section>
