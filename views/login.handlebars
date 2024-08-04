@@ -1,4 +1,4 @@
-<div class="isolate bg-white p-6 py-24 sm:py-32 lg:px-8">
+{{!-- <div class="isolate bg-white p-6 py-24 sm:py-32 lg:px-8">
 
     {{! Title }}
     <div class="mx-auto max-w-2x1 text-center">
@@ -68,4 +68,35 @@
     </div>
 </div>
 
-<script src="/js/login.js"></script>
+<script src="/js/login.js"></script> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {{> header}}
+  <div class="container">
+    <h1>Login</h1>
+    <form class="login-form">
+      <label for="email-login">Email:</label>
+      <input type="email" id="email-login" name="email" required>
+      <label for="password-login">Password:</label>
+      <input type="password" id="password-login" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div id="customAlert" style="display: none;">
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()">OK</button>
+  </div>
+  <script src="/js/login.js"></script>
+</body>
+</html>
+
+
