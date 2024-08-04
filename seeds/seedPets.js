@@ -1,8 +1,8 @@
 const Pet = require('../models/Pet');
 const { generateImageUrl } = require('../public/js/fetchPetInfo');
 
-
-const petData = [
+const seedPets = async () => {
+ const petData = [
   {
     name: 'Buddy',
     type: 'Dog',
@@ -115,7 +115,7 @@ const petData = [
   },
 ];
 
-const seedPets = async () => {
+
   await Pet.bulkCreate(petData);
 };
 

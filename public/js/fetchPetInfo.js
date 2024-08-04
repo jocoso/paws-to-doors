@@ -5,7 +5,7 @@ const fetchPetInfo = async (url, apiKey) => {
         const response = await fetch(url, {
             headers: { 'x-api-key': apiKey },
         });
-        const data = await response.joson();
+        const data = await response.json();
         return data;
     } catch (error) {
         console.error('Error fetching pet information:', error);
