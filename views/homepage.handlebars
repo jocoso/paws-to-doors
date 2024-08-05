@@ -1,10 +1,10 @@
 <body>
   {{> header}}
-  <div class="container">
-    <h1>Welcome to the Pet Adoption Agency</h1>
+  <div class="adoption-container">
+    <h1>Pet Adoption</h1>
     <div>
       {{#each pets}}
-        <div class="pet-card hover:text-gray-600" data-type="{{type}}">
+        <div class="pet-card" data-type="{{type}}">
           <h2 class="text-4xl font-mono font-extrabold py-3">
             {{name}}</h2>
               <h3 class="w-1/5 flex items-center justify-center px-8 py-3 text-base leading-6 font-medium rounded-md text-white bg-pink-400 hover:bg-pink-500 hover:text-white focus:ring ring-offset-2 ring-pink-400 focus:outline-none transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">

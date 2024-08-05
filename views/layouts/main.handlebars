@@ -20,7 +20,7 @@
             {{! NAVIGATION BAR BELOW }}
 
             <div
-                class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap"
+                class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap" id="navbar"
             >
                 <!-- Logo - simplified for clarity -->
                 <a href="/">
@@ -121,8 +121,7 @@
                     <div class="order-2 md:order-3">
                         <button
                             id="logout"
-                            class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2"
-                        >
+                            "px-4 py-2 bg-blue-500 hover:bg-blue-600 text-gray-50 rounded-xl flex items-center gap-2">
 
                             <span>LOGOUT</span>
                         </button>
@@ -130,10 +129,8 @@
 
                 {{else}}
                     <div class="order-2 md:order-3">
-                        <a
-                            href="/login"
-                            class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2"
-                        >
+                        <a href="/login"
+                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-gray-50 rounded-xl flex items-center gap-2">
 
                             <span>LOGIN</span>
                         </a>
