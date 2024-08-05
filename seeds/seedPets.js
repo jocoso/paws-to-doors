@@ -1,6 +1,8 @@
 const Pet = require('../models/Pet');
+const { generateImageUrl } = require('../public/js/fetchPetInfo');
 
-const petData = [
+const seedPets = async () => {
+ const petData = [
   {
     name: 'Buddy',
     type: 'Dog',
@@ -10,7 +12,7 @@ const petData = [
     description: 'Friendly and energetic.',
     location: 'New York, NY',
     user_id: 1,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Dog', 'Golden Retriever'),
   },
   {
     name: 'Bella',
@@ -21,7 +23,7 @@ const petData = [
     description: 'Loves to play fetch.',
     location: 'Los Angeles, CA',
     user_id: 2,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Dog', 'Labrador Retriever'),
   },
   {
     name: 'Charlie',
@@ -32,7 +34,7 @@ const petData = [
     description: 'Loves to sniff around.',
     location: 'Chicago, IL',
     user_id: 3,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Dog', 'Beagle'),
   },
   {
     name: 'Max',
@@ -43,7 +45,7 @@ const petData = [
     description: 'Very loyal and protective.',
     location: 'Houston, TX',
     user_id: 4,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Dog', 'German Shepherd'),
   },
   {
     name: 'Lucy',
@@ -54,8 +56,8 @@ const petData = [
     description: 'Small but brave.',
     location: 'Phoenix, AZ',
     user_id: 5,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
-  },
+      image_url: await generateImageUrl('Dog', 'French Bulldog'),
+    },
   {
     name: 'Whiskers',
     type: 'Cat',
@@ -65,7 +67,7 @@ const petData = [
     description: 'Curious and playful.',
     location: 'New York, NY',
     user_id: 1,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Cat', 'Siamese'),
   },
   {
     name: 'Mittens',
@@ -76,7 +78,7 @@ const petData = [
     description: 'Loves to cuddle.',
     location: 'Los Angeles, CA',
     user_id: 2,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Cat', 'Persian'),
   },
   {
     name: 'Shadow',
@@ -87,7 +89,7 @@ const petData = [
     description: 'Large and gentle.',
     location: 'Chicago, IL',
     user_id: 3,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Cat', 'Maine Coon'),
   },
   {
     name: 'Simba',
@@ -98,7 +100,7 @@ const petData = [
     description: 'Active and vocal.',
     location: 'Houston, TX',
     user_id: 4,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Cat', 'Bengal'),
   },
   {
     name: 'Luna',
@@ -109,11 +111,11 @@ const petData = [
     description: 'Calm and affectionate.',
     location: 'Phoenix, AZ',
     user_id: 5,
-    image_url: 'https://infolific.com/images/dogs/dog-with-lost-sign-around-neck.jpg',
+    image_url: await generateImageUrl('Cat', 'Russian Blue'),
   },
 ];
 
-const seedPets = async () => {
+
   await Pet.bulkCreate(petData);
 };
 

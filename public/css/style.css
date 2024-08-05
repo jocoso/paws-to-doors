@@ -14,23 +14,23 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   }
   
   /* Header styles */
-  header {
+  nav {
     background-color: #007bff;
     color: #fff;
     padding: 10px 0;
   }
   
-  header nav ul {
+   nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
   }
   
-  header nav ul li {
+   nav ul li {
     margin: 0 15px;
   }
   
-  header nav ul li a {
+  nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -212,6 +212,46 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   
   .donation-form button:hover {
     background-color: #e0a800;
+  }
+  
+  /* Add styles for the pet details page */
+.pet-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pet-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .details {
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .details p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  button#adopt-pet {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button#adopt-pet:hover {
+    background-color: #0056b3;
   }
   
   

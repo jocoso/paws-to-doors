@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const pets = await Pet.findAll({
       include: [{ model: User, attributes: ['username', 'email'] }]
     });
-    res.status(200).json(pets);
+    res.stcatus(200).json(pets);
   } catch (err) {
     res.status(500).json(err);
   }
