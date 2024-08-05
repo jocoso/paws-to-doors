@@ -150,10 +150,10 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   
   /* Pet cards */
   .pet-card {
-    border: 1px solid #ccc;
+    border: 1px solid #6c073d;
     padding: 20px;
     margin: 20px 0;
-    background-color: #fff;
+    background-color: #f7e4f1;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
