@@ -8,21 +8,29 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   /* Global styles */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #b8ddff;
     color: #333;
     line-height: 1.6;
   }
   
   /* Header styles */
+  #navbar{
+    font-family: Arial, sans-serif;
+    background-color: #e9f8ff;
+    color: #333;
+    line-height: 1.6;
+  }
+
   nav {
     background-color: #007bff;
-    color: #fff;
+    color: #e5d7f8;
     padding: 10px 0;
   }
   
    nav ul {
     list-style-type: none;
     display: flex;
+    color: #e5d7f8;
     justify-content: center;
   }
   
@@ -45,7 +53,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e9f8ff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
@@ -148,6 +156,16 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     border-radius: 5px;
   }
   
+  /* Adoption */
+  .adoption-container{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #d0c4e9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
   /* Pet cards */
   .pet-card {
     border: 1px solid #6c073d;
@@ -163,7 +181,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     height: auto;
     border-radius: 8px;
   }
-  
+
   /* Breed list */
   .breed-list {
     display: flex;
