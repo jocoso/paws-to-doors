@@ -284,7 +284,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   button#adopt-pet {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #007bff;
+    background-color: #e667db;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -293,7 +293,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   }
   
   button#adopt-pet:hover {
-    background-color: #0056b3;
+    background-color: #8a0f7e;
   }
   
   
