@@ -93,17 +93,24 @@
                         <li
                             class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600"
                         ><a href="/about-us">About Us</a></li> --}}
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/aboutUs">About Us</a></li>
-                        <li><a href="/donation">Donation</a></li>
-                        <li><a href="/adopt">Adopt</a></li>
+                        <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                            <a href="/">Home</a></li>
+                        <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                            <a href="/aboutUs">About Us</a></li>
+                        <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                            <a href="/donation">Donation</a></li>
+                        <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                            <a href="/adopt">Adopt</a></li>
                         {{#if logged_in}}
-                            <li><a href="/profile">Profile</a></li>
-                            <li><button id="logout">Logout</button></li>
+                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                                <a href="/profile">Profile</a></li>
+                            {{!-- <li><button id="logout">Logout</button></li> --}}
                             <script src="/js/logout.js"></script>
                         {{else}}
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/signup">Sign Up</a></li>
+                            {{!-- <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                                <a href="/login">Login</a></li> --}}
+                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-600">
+                                <a href="/signup">Sign Up</a></li>
                         {{/if}}
                     </ul>
                 </div>
@@ -117,7 +124,7 @@
                             class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2"
                         >
 
-                            <span>Logout</span>
+                            <span>LOGOUT</span>
                         </button>
                     </div>
 
@@ -128,7 +135,7 @@
                             class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2"
                         >
 
-                            <span>Login</span>
+                            <span>LOGIN</span>
                         </a>
                     </div>
                     {{! <a href="/login">login</a> }}
@@ -160,16 +167,6 @@
                     </div>
                 </h1>
                 <nav>
-                    <ul class="nav-tabs">
-                        {{#each tabs}}
-                            <li><a href="{{this.href}}">{{this.name}}</a></li>
-                        {{/each}}
-                    </ul>
-                    {{! SEARCH BAR }}
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search..." />
-                        <button type="submit">Search</button>
-                    </div>
                     <!-- Conditionally render login or logout links -->
                     {{#if logged_in}}
                         <a href="/profile">profile</a>
@@ -182,7 +179,16 @@
             </header>
 
             <footer>
-
+                 {{!-- <ul class="nav-tabs">
+                        {{#each tabs}}
+                            <li><a href="{{this.href}}">{{this.name}}</a></li>
+                        {{/each}}
+                    </ul>
+                    {{! SEARCH BAR }}
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." />
+                        <button type="submit">Search</button>
+                    </div> --}}
             </footer>
         </div>
 
