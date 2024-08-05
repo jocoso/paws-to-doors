@@ -146,6 +146,15 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     height: 20vh; /* Optional, to center vertically */
 }
 
+  /* Login */
+    #login{
+      background-color: #e9f8ff;
+    }
+
+    #login-title{
+      text-transform: uppercase;
+    }
+
   /* Alerts */
   .alert {
     background-color: #f8d7da;
