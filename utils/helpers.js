@@ -1,9 +1,8 @@
 module.exports = {
     format_date: (date) => {
-        // Format date as MM/DD/YYYY
-        return date.toLocaleDateString();
-
+        if (!date) return 'N/A';
+        const formattedDate = new Date(date);
+        if (isNaN(formattedDate)) return 'Invalid Date';
+        return formattedDate.toLocaleDateString();
     },
-    
-
 };
