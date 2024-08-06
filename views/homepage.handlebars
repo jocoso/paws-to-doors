@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
 <body>
   {{> header}}
-  <div class="container">
-    <h1>Welcome to the Pet Adoption Agency</h1>
+  <div class="adoption-container">
+    <h1>Pet Adoption</h1>
     <div>
       {{#each pets}}
         <div class="pet-card" data-type="{{type}}">
-          <h2>{{name}}</h2>
-          <p>Type: {{type}}</p>
-          <p>Breed: {{breed}}</p>
-          <p>Age: {{age}}</p>
-          <p>Health Status: {{health_status}}</p>
-          <p>Description: {{description}}</p>
-          <p>Location: {{location}}</p>
+          <h2 class="text-4xl font-mono font-extrabold py-3">
+            {{name}}</h2>
+              <h3 class="w-1/5 flex items-center justify-center px-8 py-3 text-base leading-6 font-medium rounded-md text-white bg-pink-400 hover:bg-pink-500 hover:text-white focus:ring ring-offset-2 ring-pink-400 focus:outline-none transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                <a href="/pet/{{id}}">View Details</a></h3>
+          <p class="list-disc text-lg font-mono px-6"><strong>Type:</strong> {{type}}</p>
+          <p class="list-disc text-lg font-mono px-6"><strong>Breed:</strong> {{breed}}</p>
+          <p class="list-disc text-lg font-mono px-6"><strong>Age:</strong> {{age}}</p>
+          <p class="list-disc text-lg font-mono px-6"><strong>Health Status:</strong> {{health_status}}</p>
+          <p class="list-disc text-lg font-mono px-6"><strong>Description:</strong> {{description}}</p>
+          <p class="list-disc text-lg font-mono px-6"><strong>Location:</strong> {{location}}</p>
           <img src="{{image_url}}" alt="Picture of {{name}}">
-          <a href="/pet/{{id}}">View Details</a>
+          {{!-- <a href="/pet/{{id}}">View Details</a> --}}
         </div>
       {{/each}}
     </div>

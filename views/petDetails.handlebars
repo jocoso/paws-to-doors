@@ -1,30 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{pet.name}}</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+
 <body>
   {{> header}}
-  <div class="container">
-    <h1>{{pet.name}}</h1>
+  <div class="adoption-container">
+    <h1 class="text-4xl font-mono font-extrabold py-3">{{pet.name}}</h1>
     <div class="pet-details">
       <img src="{{pet.image_url}}" alt="Picture of {{pet.name}}">
       <div class="details">
-        <p><strong>Type:</strong> {{pet.type}}</p>
-        <p><strong>Breed:</strong> {{pet.breed}}</p>
-        <p><strong>Age:</strong> {{pet.age}}</p>
-        <p><strong>Health Status:</strong> {{pet.health_status}}</p>
-        <p><strong>Description:</strong> {{pet.description}}</p>
-        <p><strong>Location:</strong> {{pet.location}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Type:</strong> {{pet.type}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Breed:</strong> {{pet.breed}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Age:</strong> {{pet.age}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Health Status:</strong> {{pet.health_status}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Description:</strong> {{pet.description}}</p>
+        <p class="list-disc text-lg font-mono px-6"><strong>Location:</strong> {{pet.location}}</p>
       </div>
     </div>
     {{#if logged_in}}
-      <button id="adopt-pet">Adopt</button>
+      <button class="w-1/5 flex items-center adopt-button justify-center px-8 py-3 text-base leading-6 font-medium rounded-md text-white bg-pink-400 hover:bg-pink-500 hover:text-white focus:ring ring-offset-2 ring-pink-400 focus:outline-none transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10" 
+      id="adopt-pet">
+      Adopt</button>
     {{else}}
-      <a href="/login">Login to Adopt</a>
+      <a class="w-full flex items-center justify-center px-8 py-3 text-base leading-6 font-medium rounded-md text-purple-700 dark:text-purple-700 bg-purple-100 hover:bg-purple-50 hover:text-purple-600 focus:ring ring-offset-2 ring-purple-100 focus:outline-none transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+        href="/login" rel="noopener" target="_blank">LOGIN TO ADOPT
+      </a>
     {{/if}}
   </div>
   <script src="/js/petDetails.js"></script>

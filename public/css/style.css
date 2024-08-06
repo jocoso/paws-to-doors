@@ -8,21 +8,29 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   /* Global styles */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #b8ddff;
     color: #333;
     line-height: 1.6;
   }
   
   /* Header styles */
+  #navbar{
+    font-family: Arial, sans-serif;
+    background-color: #e9f8ff;
+    color: #333;
+    line-height: 1.6;
+  }
+
   nav {
     background-color: #007bff;
-    color: #fff;
+    color: #e5d7f8;
     padding: 10px 0;
   }
   
    nav ul {
     list-style-type: none;
     display: flex;
+    color: #e5d7f8;
     justify-content: center;
   }
   
@@ -45,7 +53,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e9f8ff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
@@ -127,6 +135,30 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     background-color: #218838;
   }
   
+  /* Profile */
+
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 20vh; /* Optional, to center vertically */
+}
+
+  /* Sign Up */
+  #sign-up-container{
+    background-color: hsl(210, 100%, 100%);
+  }
+  /* Login */
+    #login{
+      background-color: #e9f8ff;
+    }
+
+    #login-title{
+      text-transform: uppercase;
+    }
+
   /* Alerts */
   .alert {
     background-color: #f8d7da;
@@ -137,12 +169,22 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     border-radius: 5px;
   }
   
+  /* Adoption */
+  .adoption-container{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #d0c4e9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
   /* Pet cards */
   .pet-card {
-    border: 1px solid #ccc;
+    border: 1px solid #6c073d;
     padding: 20px;
     margin: 20px 0;
-    background-color: #fff;
+    background-color: #f7e4f1;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -152,7 +194,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
     height: auto;
     border-radius: 8px;
   }
-  
+
   /* Breed list */
   .breed-list {
     display: flex;
@@ -181,7 +223,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   
   /* Footer */
   footer {
-    background-color: #007bff;
+    background-color: #f8f8f8;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -242,7 +284,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   button#adopt-pet {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #007bff;
+    background-color: #e667db;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -251,7 +293,7 @@ body, h1, h2, h3, p, ul, li, form, input, button {
   }
   
   button#adopt-pet:hover {
-    background-color: #0056b3;
+    background-color: #8a0f7e;
   }
   
   
