@@ -1,19 +1,17 @@
 const User = require('./User');
 const Pet = require('./Pet');
+const Ticket = require('./Ticket');
 
-// Define associations here
-// User.hasMany(Pet, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE',
-// });
+User.hasMany(Pet, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+});
 
-// Pet.belongsTo(User, {
-//    foreignKey: 'user_id',
+Pet.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+});
 
-// });
-
-module.exports = {
-  User,
-  Pet,
-};
-
+module.exports = { User, Pet, Ticket };

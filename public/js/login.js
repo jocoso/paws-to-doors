@@ -1,4 +1,28 @@
-const loginFormHandler = async (event) => {
+
+
+
+
+async function showAlert(message) {
+    return new Promise((resolve) => {
+      const alertBox = document.getElementById('customAlert');
+      const alertMessage = document.getElementById('alertMessage');
+  
+      if (alertBox && alertMessage) {
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+  
+        window.closeAlert = () => {
+          alertBox.style.display = 'none';
+          resolve();
+        };
+      } else {
+        console.error('Alert elements not found');
+        resolve();
+      }
+    });
+  }
+  
+  const loginFormHandler = async (event) => {
     event.preventDefault();
   
     const email = document.querySelector('#email-login').value.trim();
@@ -11,14 +35,22 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
+      const result = await response.json();
+      console.log(result); // Log the response
+  
       if (response.ok) {
+        await showAlert("Login successful");
         document.location.replace('/');
       } else {
-        alert('Failed to log in.');
+        await showAlert("Login failed: " + (result.message || 'Unknown error'));
       }
     }
   };
   
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.querySelector('.login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', loginFormHandler);
+    }
+  });
+  

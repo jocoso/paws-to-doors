@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {{> header}}
+  <div class="container">
+    <h1>Dashboard</h1>
+    <p>Welcome, {{username}}</p>
+    <form class="post-pet-form">
+      <label for="pet-name">Pet Name:</label>
+      <input type="text" id="pet-name" name="name" required>
+      <label for="pet-type">Pet Type:</label>
+      <input type="text" id="pet-type" name="type" required>
+      <label for="pet-breed">Pet Breed:</label>
+      <input type="text" id="pet-breed" name="breed" required>
+      <label for="pet-age">Pet Age:</label>
+      <input type="number" id="pet-age" name="age" required>
+      <label for="pet-health-status">Health Status:</label>
+      <input type="text" id="pet-health-status" name="health_status" required>
+      <label for="pet-description">Description:</label>
+      <input type="text" id="pet-description" name="description" required>
+      <label for="pet-location">Location:</label>
+      <input type="text" id="pet-location" name="location" required>
+      <label for="pet-image-url">Image URL:</label>
+      <input type="text" id="pet-image-url" name="image_url">
+      <button type="submit">Post Pet</button>
+    </form>
+  </div>
+  <script src="/js/postPet.js"></script>
+</body>
+</html>

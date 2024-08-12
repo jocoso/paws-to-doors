@@ -1,0 +1,123 @@
+const Pet = require('../models/Pet');
+const { generateImageUrl } = require('../public/js/fetchPetInfo');
+
+const seedPets = async () => {
+ const petData = [
+  {
+    name: 'Buddy',
+    type: 'Dog',
+    breed: 'Golden Retriever',
+    age: 3,
+    health_status: 'Healthy',
+    description: 'Friendly and energetic.',
+    location: 'New York, NY',
+    user_id: 1,
+    image_url: await generateImageUrl('Dog', 'Golden Retriever'),
+  },
+  {
+    name: 'Bella',
+    type: 'Dog',
+    breed: 'Labrador Retriever',
+    age: 2,
+    health_status: 'Healthy',
+    description: 'Loves to play fetch.',
+    location: 'Los Angeles, CA',
+    user_id: 2,
+    image_url: await generateImageUrl('Dog', 'Labrador Retriever'),
+  },
+  {
+    name: 'Charlie',
+    type: 'Dog',
+    breed: 'Beagle',
+    age: 4,
+    health_status: 'Healthy',
+    description: 'Loves to sniff around.',
+    location: 'Chicago, IL',
+    user_id: 3,
+    image_url: await generateImageUrl('Dog', 'Beagle'),
+  },
+  {
+    name: 'Max',
+    type: 'Dog',
+    breed: 'German Shepherd',
+    age: 5,
+    health_status: 'Healthy',
+    description: 'Very loyal and protective.',
+    location: 'Houston, TX',
+    user_id: 4,
+    image_url: await generateImageUrl('Dog', 'German Shepherd'),
+  },
+  {
+    name: 'Lucy',
+    type: 'Dog',
+    breed: 'French Bulldog',
+    age: 3,
+    health_status: 'Healthy',
+    description: 'Small but brave.',
+    location: 'Phoenix, AZ',
+    user_id: 5,
+      image_url: await generateImageUrl('Dog', 'French Bulldog'),
+    },
+  {
+    name: 'Whiskers',
+    type: 'Cat',
+    breed: 'Siamese',
+    age: 4,
+    health_status: 'Healthy',
+    description: 'Curious and playful.',
+    location: 'New York, NY',
+    user_id: 1,
+    image_url: await generateImageUrl('Cat', 'Siamese'),
+  },
+  {
+    name: 'Mittens',
+    type: 'Cat',
+    breed: 'Persian',
+    age: 3,
+    health_status: 'Healthy',
+    description: 'Loves to cuddle.',
+    location: 'Los Angeles, CA',
+    user_id: 2,
+    image_url: await generateImageUrl('Cat', 'Persian'),
+  },
+  {
+    name: 'Shadow',
+    type: 'Cat',
+    breed: 'Maine Coon',
+    age: 5,
+    health_status: 'Healthy',
+    description: 'Large and gentle.',
+    location: 'Chicago, IL',
+    user_id: 3,
+    image_url: await generateImageUrl('Cat', 'Maine Coon'),
+  },
+  {
+    name: 'Simba',
+    type: 'Cat',
+    breed: 'Bengal',
+    age: 2,
+    health_status: 'Healthy',
+    description: 'Active and vocal.',
+    location: 'Houston, TX',
+    user_id: 4,
+    image_url: await generateImageUrl('Cat', 'Bengal'),
+  },
+  {
+    name: 'Luna',
+    type: 'Cat',
+    breed: 'Russian Blue',
+    age: 3,
+    health_status: 'Healthy',
+    description: 'Calm and affectionate.',
+    location: 'Phoenix, AZ',
+    user_id: 5,
+    image_url: await generateImageUrl('Cat', 'Russian Blue'),
+  },
+];
+
+
+  await Pet.bulkCreate(petData);
+};
+
+module.exports = seedPets;
+
